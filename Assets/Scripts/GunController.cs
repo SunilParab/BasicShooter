@@ -35,7 +35,7 @@ public class GunController : MonoBehaviour
     float cannonBulletSize = 5;
 
     //Sniper Variables
-    float sniperBulletSpeed = 100;
+    float sniperBulletSpeed = 200;
     float sniperBulletDamange = 40;
     float sniperBulletLifeSpan = 3;
     float sniperBulletSize = 2;
@@ -53,6 +53,15 @@ public class GunController : MonoBehaviour
         if (attackAction.triggered && reloaded) {
             Fire();
         }
+
+        if (Input.GetKey(KeyCode.Alpha1)) {
+            curGun = GunType.Pistol;
+        } else if (Input.GetKey(KeyCode.Alpha2)) {
+            curGun = GunType.Cannon;
+        } else if (Input.GetKey(KeyCode.Alpha3)) {
+            curGun = GunType.Sniper;
+        }
+
     }
 
 
