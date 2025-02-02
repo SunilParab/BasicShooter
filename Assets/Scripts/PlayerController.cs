@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float sensitivity = 5;
 
+    [SerializeField]
     float health = 100;
     
     //Input systems

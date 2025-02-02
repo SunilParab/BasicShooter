@@ -6,10 +6,18 @@ public class BulletController : MonoBehaviour
 
     float damage;
     bool friendly;
+    float lifespan;
 
-    public void setup(float damage, bool friendly) {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Invoke("maxRange",lifespan);
+    }
+
+    public void setup(float damage, bool friendly, float lifespan) {
         this.damage = damage;
         this.friendly = friendly;
+        this.lifespan = lifespan;
     }
 
     public bool getFriendly() {
@@ -17,7 +25,12 @@ public class BulletController : MonoBehaviour
     }
 
     public float hit() {
+        Destroy(gameObject);
         return damage;
+    }
+
+    void maxRange() {
+        Destroy(gameObject);
     }
 
 }
