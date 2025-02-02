@@ -7,16 +7,16 @@ public class BulletController : MonoBehaviour
     float damage;
     bool friendly;
 
-    void setup(float damage, bool friendly) {
+    public void setup(float damage, bool friendly) {
         this.damage = damage;
         this.friendly = friendly;
     }
 
-    bool getFriendly() {
+    public bool getFriendly() {
         return friendly;
     }
 
-    float hit() {
+    public float hit() {
         return damage;
     }
 

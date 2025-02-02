@@ -18,10 +18,15 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision) {
+    void OnTriggerEnter(Collider collision) {
+        Debug.Log("hit");
         GameObject other = collision.gameObject;
         if (other.tag.Equals("Bullet")) {
-            
+            BulletController bullet = other.GetComponent<BulletController>();
+            if (bullet.getFriendly()) {
+                health -= bullet.hit();
+                Debug.Log(health);
+            }
         }
     }
 

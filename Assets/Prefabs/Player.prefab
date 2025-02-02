@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1921148751359788373}
   - component: {fileID: 3296778226957421098}
   - component: {fileID: 4730837058971954353}
-  - component: {fileID: 6862661263330576536}
   - component: {fileID: 7314535011017828787}
   m_Layer: 0
   m_Name: Gun
@@ -88,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6862661263330576536
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571106627777135533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &7314535011017828787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reloadTime: 0.5
+  bulletSpeed: 50
+  bulletPrefab: {fileID: 2305190821865676009, guid: 3d14e31a8bc810a41a6e75ace0d6a224, type: 3}
 --- !u!1 &5971685354740248541
 GameObject:
   m_ObjectHideFlags: 0

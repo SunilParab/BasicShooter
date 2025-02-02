@@ -1,3 +1,4 @@
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,10 @@ public class GunController : MonoBehaviour
     [SerializeField]
     float reloadTime = 0.5f;
     bool reloaded = true;
-
+    [SerializeField]
+    float bulletSpeed = 50;
+    [SerializeField]
+    GameObject bulletPrefab;
 
     //Input Systems
     InputAction attackAction;
@@ -30,8 +34,12 @@ public class GunController : MonoBehaviour
 
 
     void Fire() {
+        GameObject bullet = Instantiate(bulletPrefab,transform.position,transform.rotation);
+        bullet.GetComponent<Rigidbody>().linearVelocity = bullet.transform.up*bulletSpeed;
+        bullet.GetComponent<BulletController>().setup(10,true);
+
+        reloaded = false;
         Invoke("Reload",reloadTime);
-        Debug.Log("shot");
     }
 
     void Reload() {
