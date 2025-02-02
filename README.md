@@ -1,2 +1,2 @@
-# GungeonClone
-A simple Enter the Gungeon clone
+# BasicShooter
+A simple shooter game

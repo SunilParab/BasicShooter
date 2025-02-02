@@ -1,5 +1,6 @@
 using TreeEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class GunController : MonoBehaviour
@@ -13,6 +14,8 @@ public class GunController : MonoBehaviour
     float bulletSpeed = 50;
     [SerializeField]
     GameObject bulletPrefab;
+    [SerializeField]
+    Image reloadImage;
 
     //Input Systems
     InputAction attackAction;
@@ -80,11 +83,13 @@ public class GunController : MonoBehaviour
         }
 
         reloaded = false;
+        reloadImage.color = Color.red;
         Invoke("Reload",reloadTime);
     }
 
     void Reload() {
         reloaded = true;
+        reloadImage.color = Color.green;
     }
 
     void PistolBullet(GameObject bullet) {
